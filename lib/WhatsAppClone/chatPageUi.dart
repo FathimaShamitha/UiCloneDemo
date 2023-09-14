@@ -70,16 +70,16 @@ class MyChatPageClass extends StatelessWidget {
                   Text(Time[index]),
                   Count[index] == "0"
                       ? CircleAvatar(
-                          radius: 10,
+                          radius: 8,
                           backgroundColor: Colors.white,
                         )
                       : CircleAvatar(
-                          radius: 10,
+                          radius: 8,
                           backgroundColor: Colors.teal[500],
                           child: Center(
                               child: Text(
                             Count[index],
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(color: Colors.white,fontSize: 12),
                           )),
                         )
                 ],
