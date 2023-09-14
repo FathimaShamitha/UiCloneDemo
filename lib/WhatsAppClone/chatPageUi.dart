@@ -5,14 +5,14 @@ class MyChatPageClass extends StatelessWidget {
   MyChatPageClass({Key? key}) : super(key: key);
 
   List Name = [
-    "CS",
+    "Mary",
     "Mom",
     "Dad",
     "Sis",
     "Net general grp2023",
     "+91 7034933444",
     "MyJio",
-    "MscCs 2020-22"
+    "Jennie"
   ];
   List Message = [
     "~Shaa:okay",
@@ -35,6 +35,16 @@ class MyChatPageClass extends StatelessWidget {
     "24/07/2023",
     "23/07/2023"
   ];
+  List ProPics = [
+    "https://shorturl.at/anuQV",
+    "",
+    "https://shorturl.at/dsBKL",
+    "https://shorturl.at/bcdf9",
+    "",
+    "https://shorturl.at/bcdf9",
+    "",
+    "https://shorturl.at/bcdf9"
+  ];
   List Count = ["2", "3", "1", "7", "2", "0", "0", "0"];
 
   @override
@@ -55,15 +65,27 @@ class MyChatPageClass extends StatelessWidget {
           itemCount: Name.length,
           itemBuilder: (context, int index) {
             return ListTile(
-              leading: CircleAvatar(
-                radius: 30,
-                backgroundColor: Colors.grey[400],
-                child: Icon(
-                  Icons.person_rounded,
-                  color: Colors.white,
-                ),
+              leading: ProPics[index] == ""
+                  ? CircleAvatar(
+                      radius: 25,
+                      backgroundColor: Colors.black12,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 12),
+                        child: Icon(
+                          Icons.person_rounded,
+                          color: Colors.white,
+                          size: 45,
+                        ),
+                      ),
+                    )
+                  : CircleAvatar(
+                      radius: 25,
+                      backgroundImage: NetworkImage(ProPics[index]),
+                    ),
+              title: Text(
+                Name[index],
+                style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              title: Text(Name[index]),
               subtitle: Text(Message[index]),
               trailing: Column(
                 children: [
@@ -79,7 +101,7 @@ class MyChatPageClass extends StatelessWidget {
                           child: Center(
                               child: Text(
                             Count[index],
-                            style: TextStyle(color: Colors.white,fontSize: 12),
+                            style: TextStyle(color: Colors.white, fontSize: 12),
                           )),
                         )
                 ],

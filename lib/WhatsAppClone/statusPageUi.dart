@@ -47,9 +47,9 @@ class _MyStatusPageClassState extends State<MyStatusPageClass> {
               onPressed: () {},
               child: Icon(
                 Icons.edit,
-                color: Colors.white,
+                color: Colors.teal[600],
               ),
-              backgroundColor: Colors.grey,
+              backgroundColor: Colors.teal[100],
             ),
           ),
         ),
@@ -144,7 +144,7 @@ class _MyStatusPageClassState extends State<MyStatusPageClass> {
             } else {
               return ListTile(
                 leading: CircleAvatar(
-                  radius: 30,
+                  radius: 28,
                   backgroundImage: NetworkImage(ProfilePic[index - 1]),
                 ),
                 title: Text(
